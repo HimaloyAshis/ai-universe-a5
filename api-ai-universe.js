@@ -16,8 +16,8 @@ const showAI=AI=>{
     const cardContainer =document.getElementById('cardContainer')
     const showAll= document.getElementById('see-more')
     const btnShow=()=>{
-        if(AI.length>9){
-            AI= AI.slice(0, 9)
+        if(AI.length>6){
+            AI= AI.slice(0, 6)
             showAll.classList.remove('d-none')
         }
         else{
@@ -73,12 +73,12 @@ const fetchModal=id=>{
 
 const modelShow=(modelDisplay)=>{
 
-    console.log(modelDisplay.data)
+    // console.log(modelDisplay.data)
     const {data} = modelDisplay
      Object.values(data.features).forEach(feature=>{
             // console.log(feature)
             const {feature_name} = feature;
-            // console.log(feature_name)/
+            console.log(feature_name)
     
 
         // Object.values(animals).forEach(val => console.log(val));
@@ -87,7 +87,7 @@ const modelShow=(modelDisplay)=>{
     const div= document.createElement('div')
     div.classList.add('col')
     div.innerHTML =`
-    <div class="d-flex modalW">
+    <div class="d-flex  modalW">
     <div class="card ">
     
     <div class="card-body" ">
