@@ -17,14 +17,22 @@
     </header>
     <!-- main section -->
     <main>
-        <!-- all card are here -->
-        <section class="container">
+        <!-- see more -->
+        <section id="see-more" class="container d-none">
             <div id="cardContainer" class="row row-cols-1 row-cols-md-3 g-4 ">
                 
             </div>
             <div class="d-flex justify-content-center align-items-center mt-4">
-                <button class="btn btn-success ">See more</button>
+                <button id="show-all" class="btn btn-success ">See more</button>
             </div>
+        </section>
+        <!-- spinner section -->
+        <section id="spinner" class="mt-6 d-none">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
         </section>
 
     </main>
