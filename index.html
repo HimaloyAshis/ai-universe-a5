@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/81be92539a.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -20,19 +21,42 @@
         <!-- see more -->
         <section id="see-more" class="container d-none">
             <div id="cardContainer" class="row row-cols-1 row-cols-md-3 g-4 ">
-                
+
             </div>
             <div class="d-flex justify-content-center align-items-center mt-4">
-                <button id="show-all" class="btn btn-success ">See more</button>
+                <button onclick="showAllBtn()" class="btn btn-success ">See more</button>
             </div>
         </section>
         <!-- spinner section -->
         <section id="spinner" class="mt-6 d-none">
             <div class="d-flex justify-content-center">
                 <div class="spinner-border" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                    <span class="visually-hidden"></span>
                 </div>
-              </div>
+            </div>
+        </section>
+
+        <!-- modal section -->
+        <section class="">
+
+            <!-- Modal -->
+            <div class="modal fade " id="apiModal" tabindex="-1" aria-labelledby="apiModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="apiModalLabel"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="modalId" class="modal-body ">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
