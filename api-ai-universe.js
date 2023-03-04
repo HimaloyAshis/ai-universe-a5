@@ -77,12 +77,12 @@ const modelShow= modelDisplay=>{
     const {data} = modelDisplay
     console.log(data)
      Object.values(data.features).forEach(feature=>{
-            // console.log(feature)
+            console.log(feature)
             const {feature_name} = feature;
             // console.log(feature_name)
     
 
-        // Object.values(animals).forEach(val => console.log(val));
+
     const modalId = document.getElementById('modalId')
     modalId.innerHTML='';
     const div= document.createElement('div')
@@ -95,9 +95,9 @@ const modelShow= modelDisplay=>{
     <div><p class="fs-5">${modelDisplay.data.description}</p></div>
     
     <div class="d-flex justify-content-between align-items-center gap-2">
-    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[0].price: 'not available'}${data.pricing ? data.pricing[0].plan: 'not available'}</div>
-    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[1].price: 'not available'}${data.pricing ? data.pricing[1].plan: 'not available'}</div>
-    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[2].price: 'not available'}${data.pricing ? data.pricing[2].plan: 'not available'}</div>
+    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[0].price: 'Free of cost / Basic'}${data.pricing ? data.pricing[0].plan: 'Free of cost / Basic'}</div>
+    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[1].price: 'Free of cost / Pro'}${data.pricing ? data.pricing[1].plan: 'Free of cost / Pro'}</div>
+    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[2].price: 'Free of cost / Enterprise'}${data.pricing ? data.pricing[2].plan: 'Free of cost / Enterprise'}</div>
     </div>
     <div></div>
     
@@ -125,7 +125,7 @@ const modelShow= modelDisplay=>{
     <div class="card">
             <div>
             <img class="img-fluid img-thumbnail" src="${modelDisplay.data.image_link[0]}" class="card-img-top" alt="...">
-                <p class="bg-danger w-25 h-10 rounded-2 text-center mb-50">${data.accuracy.score ? data.accuracy.score : '' } </p>
+                <p class="bg-danger w-25 h-10 rounded-2 text-center mb-50 px-2">${data.accuracy.score ? data.accuracy.score +`% Accuracy` : '' } </p>
             </div>
     <div class="card-body">
     <p class="fs-4">${data.input_output_examples ? data.input_output_examples[0].input: 'not available'}</p>
