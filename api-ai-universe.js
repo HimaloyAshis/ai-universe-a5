@@ -16,8 +16,8 @@ const showAI=AI=>{
     const cardContainer =document.getElementById('cardContainer')
     const showAll= document.getElementById('see-more')
     const btnShow=()=>{
-        if(AI.length>6){
-            AI= AI.slice(0, 6)
+        if(AI.length==12){
+            AI= AI.slice(0, 12)
             showAll.classList.remove('d-none')
         }
         else{
@@ -71,14 +71,15 @@ const fetchModal=id=>{
     .then(data=>modelShow(data))
 }
 
-const modelShow=(modelDisplay)=>{
+const modelShow= modelDisplay=>{
 
     // console.log(modelDisplay.data)
     const {data} = modelDisplay
+    console.log(data)
      Object.values(data.features).forEach(feature=>{
             // console.log(feature)
             const {feature_name} = feature;
-            console.log(feature_name)
+            // console.log(feature_name)
     
 
         // Object.values(animals).forEach(val => console.log(val));
@@ -94,9 +95,9 @@ const modelShow=(modelDisplay)=>{
     <div><p class="fs-5">${modelDisplay.data.description}</p></div>
     
     <div class="d-flex justify-content-between align-items-center gap-2">
-    <div class="bg-secondary text-white rounded-2 py-8">${data.pricing[0].price? data.pricing[0].price: 'not available'}${data.pricing[0].plan ? data.pricing[0].plan: 'not available'}</div>
-    <div class="bg-secondary text-white rounded-2 py-8">${data.pricing[1].price? data.pricing[1].price: 'not available'}${data.pricing[1].plan ? data.pricing[1].plan: 'not available'}</div>
-    <div class="bg-secondary text-white rounded-2 py-8">${data.pricing[2].price? data.pricing[2].price: 'not available'}${data.pricing[2].plan ? data.pricing[2].plan: 'not available'}</div>
+    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[0].price: 'not available'}${data.pricing ? data.pricing[0].plan: 'not available'}</div>
+    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[1].price: 'not available'}${data.pricing ? data.pricing[1].plan: 'not available'}</div>
+    <div class="bg-secondary text-white rounded-2 py-8 px-2">${data.pricing ? data.pricing[2].price: 'not available'}${data.pricing ? data.pricing[2].plan: 'not available'}</div>
     </div>
     <div></div>
     
@@ -110,9 +111,9 @@ const modelShow=(modelDisplay)=>{
     <ul>
     
         <p >Integration</p>
-        <li>${data.integrations[0] ? data.integrations[0] : 'not available'}</li>
-        <li>${data.integrations[1] ? data.integrations[1] : 'not available'}</li>
-        <li>${data.integrations[2] ? data.integrations[2] : 'not available'}</li>
+        <li>${data.integrations ? data.integrations[0] : 'not available'}</li>
+        <li>${data.integrations ? data.integrations[1] : 'not available'}</li>
+        <li>${data.integrations ? data.integrations[2] : 'not available'}</li>
        
     </ul>
     
@@ -124,11 +125,11 @@ const modelShow=(modelDisplay)=>{
     <div class="card">
             <div>
             <img class="img-fluid img-thumbnail" src="${modelDisplay.data.image_link[0]}" class="card-img-top" alt="...">
-                <p class="bg-danger w-25 h-10 rounded-2 text-center mb-50">${data.accuracy.score ? data.accuracy.score: ''} %</p>
+                <p class="bg-danger w-25 h-10 rounded-2 text-center mb-50">${data.accuracy.score ? data.accuracy.score : '' } </p>
             </div>
     <div class="card-body">
-    <p class="fs-4">${data.input_output_examples[0].input ? data.input_output_examples[0].input: 'not available'}</p>
-    <p class="fs-6">${data.input_output_examples[1].output? data.input_output_examples[1].input: 'not available'}</p>
+    <p class="fs-4">${data.input_output_examples ? data.input_output_examples[0].input: 'not available'}</p>
+    <p class="fs-6">${data.input_output_examples ? data.input_output_examples[1].input: 'not available'}</p>
     
     
     
